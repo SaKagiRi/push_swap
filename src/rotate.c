@@ -19,7 +19,7 @@ int	rotate(t_list **node)
 	if (!(*node))
 		return (0);
 	if (!(*node)->next)
-		return (1); //TODO:change to zero if you want to do somthing.
+		return (0);
 	temp = *node;
 	*node = (*node)->next;
 	temp -> next = NULL;
@@ -34,8 +34,6 @@ void	ra(t_stack *stack)
 	status = rotate(&(stack -> a));
 	if (SHOW_OPERATION && status)
 		pnf("ra\n");
-	else if (SHOW_OPERATION)
-		pnf("[ra] failed\n");
 }
 
 void	rb(t_stack *stack)
@@ -45,8 +43,6 @@ void	rb(t_stack *stack)
 	status = rotate(&(stack -> b));
 	if (SHOW_OPERATION && status)
 		pnf("rb\n");
-	else if (SHOW_OPERATION)
-		pnf("[rb] failed\n");
 }
 
 void	rr(t_stack *stack)
@@ -58,11 +54,4 @@ void	rr(t_stack *stack)
 	status_b = rotate(&(stack -> b));
 	if (SHOW_OPERATION && status_a && status_b)
 		pnf("rr\n");
-	else if (SHOW_OPERATION)
-	{
-		if (!status_a)
-			pnf("[rr] failed: list a\n");
-		if (!status_b)
-			pnf("[rr] failed: list b\n");
-	}
 }

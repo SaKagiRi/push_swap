@@ -71,3 +71,10 @@ int	gen_chunk(int size)
 		chunk = 37 + (size - 500) / 20;
 	return (chunk);
 }
+
+void	clear(t_stack *stack)
+{
+	ft_lstclear(&(stack -> a), del_content);
+	ft_lstclear(&(stack -> b), del_content);
+	free(stack);
+}

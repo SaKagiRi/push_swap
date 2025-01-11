@@ -31,8 +31,6 @@ void	pa(t_stack *stack)
 	status = push_list(&(stack -> b), &(stack -> a));
 	if (SHOW_OPERATION && status)
 		pnf("pa\n");
-	else if (SHOW_OPERATION)
-		pnf("[pa] failed\n");
 }
 
 void	pb(t_stack *stack)
@@ -42,6 +40,4 @@ void	pb(t_stack *stack)
 	status = push_list(&(stack -> a), &(stack -> b));
 	if (SHOW_OPERATION && status)
 		pnf("pb\n");
-	else if (SHOW_OPERATION)
-		pnf("[pb] failed\n");
 }

@@ -12,13 +12,6 @@
 
 #include "../include/push_swap.h"
 
-void	clear(t_stack *stack)
-{
-	ft_lstclear(&(stack -> a), del_content);
-	ft_lstclear(&(stack -> b), del_content);
-	free(stack);
-}
-
 void	controller(t_stack *stack)
 {
 	int	size;
@@ -40,10 +33,6 @@ void	controller(t_stack *stack)
 int	main(int c, char **v)
 {
 	t_stack	*stack;
-	t_list	*tmp;
-	void	*temp[2];
-	int		i;
-	long	**num;
 
 	if (!checkparser(v + 1) || c < 2)
 		return (pnf("error\n"));

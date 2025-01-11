@@ -1,7 +1,7 @@
 NAME	= push_swap
 FILE	= push_swap.c parser.c swap_node.c utils.c push_node.c rotate.c reverse_rotate.c index.c sort.c utils2.c sort2.c
-BFILE	= 
-FLAGS	= -g3 #-Wall -Wextra -Werror #-g3 #-o0 -fsanitize=address,undefined
+BFILE	=
+FLAGS	= -Wall -Wextra -Werror -g3 #-o0 -fsanitize=address,undefined
 CC		= cc
 OBJD	= obj
 SRCD	= src
@@ -21,7 +21,7 @@ $(OBJD)/%.o :$(SRCD)/%.c
 			@$(CC) $(FLAGS) -I$(INC) -c $< -o $@
 
 bonus		:$(OBJD) $(BOBJ)
-			@make -C $(KML) && $(CC) $(FLAGS) $(BSRC) $(KML)/kml.a -o $(OUT)/$(NAME)
+			@make -C $(KML) && $(CC) $(FLAGS) $(BSRC) $(KML)/kml.a -I$(INC) -o $(OUT)/checker -D SHOW_OPERATION=0
 
 $(NAME)		:$(OBJ) 
 			@make -C $(KML) && $(CC) $(FLAGS) $(SRC) $(KML)/kml.a -I$(INC) -o $(OUT)/$(NAME)

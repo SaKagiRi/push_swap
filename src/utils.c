@@ -28,9 +28,8 @@ int	if_it_sort(t_stack *stack, char list, int reverse)
 	int		i;
 
 	i = -1;
-	if (list == 'a')
-		node = stack->a;
-	else if (list == 'b')
+	node = stack->a;
+	if (list == 'b')
 		node = stack->b;
 	while (node)
 	{

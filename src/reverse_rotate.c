@@ -21,7 +21,7 @@ int	reverse_rotate_list(t_list **node)
 	if (!(*node))
 		return (0);
 	if (!(*node)->next)
-		return (1);
+		return (0);
 	temp = *node;
 	last = ft_lstlast(*node);
 	i = ft_lstsize(*node);
@@ -40,8 +40,6 @@ void	rra(t_stack *stack)
 	status = reverse_rotate_list(&(stack -> a));
 	if (SHOW_OPERATION && status)
 		pnf("rra\n");
-	else if (SHOW_OPERATION)
-		pnf("[rra] failed\n");
 }
 
 void	rrb(t_stack *stack)
@@ -51,8 +49,6 @@ void	rrb(t_stack *stack)
 	status = reverse_rotate_list(&(stack -> b));
 	if (SHOW_OPERATION && status)
 		pnf("rrb\n");
-	else if (SHOW_OPERATION)
-		pnf("[rrb] failed\n");
 }
 
 void	rrr(t_stack *stack)
@@ -64,11 +60,4 @@ void	rrr(t_stack *stack)
 	status_b = reverse_rotate_list(&(stack -> b));
 	if (SHOW_OPERATION && status_a && status_b)
 		pnf("rrr\n");
-	else if (SHOW_OPERATION)
-	{
-		if (!status_a)
-			pnf("[rrr] failed: list a\n");
-		if (!status_b)
-			pnf("[rrr] failed: list b\n");
-	}
 }

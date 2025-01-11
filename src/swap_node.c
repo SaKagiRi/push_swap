@@ -32,8 +32,6 @@ void	sa(t_stack *stack)
 	status = swap_list(&(stack -> a));
 	if (SHOW_OPERATION && status)
 		pnf("sa\n");
-	else if (SHOW_OPERATION)
-		pnf("[sa] failed");
 }
 
 void	sb(t_stack *stack)
@@ -43,8 +41,6 @@ void	sb(t_stack *stack)
 	status = swap_list(&(stack -> b));
 	if (SHOW_OPERATION && status)
 		pnf("sb\n");
-	else if (SHOW_OPERATION)
-		pnf("[sb] failed\n");
 }
 
 void	ss(t_stack *stack)
@@ -56,11 +52,4 @@ void	ss(t_stack *stack)
 	status_b = swap_list(&(stack -> b));
 	if (SHOW_OPERATION && status_a && status_b)
 		pnf("ss\n");
-	else if (SHOW_OPERATION)
-	{
-		if (!status_a)
-			pnf("[ss] failed: list A\n");
-		if (!status_b)
-			pnf("[ss] failed: list B\n");
-	}
 }
