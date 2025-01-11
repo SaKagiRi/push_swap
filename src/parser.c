@@ -79,7 +79,7 @@ void	check_same_number(t_stack *stack)
 			if (status == 2)
 			{
 				clear(stack);
-				pnf("error\n");
+				write(2, "Error\n", 2);
 				exit(1);
 			}
 			temp = temp -> next;
@@ -109,7 +109,7 @@ int	ft_atol(char *nb, t_stack *stack, char **split)
 		{
 			clear(stack);
 			free_split(split);
-			pnf("error\n");
+			write(2, "Error\n", 6);
 			exit(1);
 		}
 	}

@@ -30,12 +30,33 @@ void	controller(t_stack *stack)
 		butterfly(stack);
 }
 
+int	not_number(char **v)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (v[++i])
+	{
+		j = -1;
+		while (v[i][++j])
+		{
+			if (v[i][j] >= '0' && v[i][j] <= '9')
+				return (0);
+		}
+	}
+	return (1);
+}
+
 int	main(int c, char **v)
 {
 	t_stack	*stack;
 
-	if (!checkparser(v + 1) || c < 2)
-		return (pnf("error\n"));
+	if (c < 2 || not_number(v) || !checkparser(v + 1))
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	stack -> a = NULL;
 	stack -> b = NULL;
