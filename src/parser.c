@@ -79,7 +79,7 @@ void	check_same_number(t_stack *stack)
 			if (status == 2)
 			{
 				clear(stack);
-				write(2, "Error\n", 2);
+				write(2, "Error\n", 6);
 				exit(1);
 			}
 			temp = temp -> next;

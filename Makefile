@@ -15,9 +15,9 @@ BSRC	= $(addprefix $(SRCD)/, $(BFILE))
 
 OUT		= ./
 
-all		:$(OBJD) $(NAME)
+all		:$(NAME)
 
-$(OBJD)/%.o :$(SRCD)/%.c
+$(OBJD)/%.o :$(SRCD)/%.c | $(OBJD)
 			@$(CC) $(FLAGS) -I$(INC) -c $< -o $@
 
 bonus		:$(OBJD) $(BOBJ)
