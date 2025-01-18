@@ -30,24 +30,6 @@ void	controller(t_stack *stack)
 		butterfly(stack);
 }
 
-int	not_number(char **v)
-{
-	int	i;
-	int	j;
-
-	i = -1;
-	while (v[++i])
-	{
-		j = -1;
-		while (v[i][++j])
-		{
-			if (v[i][j] >= '0' && v[i][j] <= '9')
-				return (0);
-		}
-	}
-	return (1);
-}
-
 int	main(int c, char **v)
 {
 	t_stack	*stack;

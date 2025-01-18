@@ -78,3 +78,21 @@ void	clear(t_stack *stack)
 	ft_lstclear(&(stack -> b), del_content);
 	free(stack);
 }
+
+int	not_number(char **v)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (v[++i])
+	{
+		j = -1;
+		while (v[i][++j])
+		{
+			if (v[i][j] >= '0' && v[i][j] <= '9')
+				return (0);
+		}
+	}
+	return (1);
+}

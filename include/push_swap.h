@@ -52,6 +52,7 @@ int			if_it_sort(t_stack *stack, char list, int reverse);
 int			find_min(t_stack *stack, char list);
 int			find_max(t_stack *stack, char list);
 int			find_number_after_min(t_stack *stack, int min);
+int			not_number(char **v);
 
 int			swap_list(t_list **node);
 void		sa(t_stack *stack);

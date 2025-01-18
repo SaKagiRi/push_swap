@@ -1,6 +1,6 @@
 NAME	= push_swap
 FILE	= push_swap.c parser.c swap_node.c utils.c push_node.c rotate.c reverse_rotate.c index.c sort.c utils2.c sort2.c
-BFILE	=
+BFILE	= checker.c parser.c swap_node.c utils.c push_node.c rotate.c reverse_rotate.c index.c sort.c utils2.c sort2.c
 FLAGS	= -Wall -Wextra -Werror -g3 #-o0 -fsanitize=address,undefined
 CC		= cc
 OBJD	= obj
@@ -21,7 +21,7 @@ $(OBJD)/%.o :$(SRCD)/%.c
 			@$(CC) $(FLAGS) -I$(INC) -c $< -o $@
 
 bonus		:$(OBJD) $(BOBJ)
-			@make -C $(KML) && $(CC) $(FLAGS) $(BSRC) $(KML)/kml.a -I$(INC) -o $(OUT)/checker -D SHOW_OPERATION=0
+			@make -C $(KML) && $(CC) $(FLAGS) $(BSRC) $(KML)/kml.a -I$(INC) -o $(OUT)/checker -D SHOW_OPERATION=0 -D BUFFER_SIZE=1
 
 $(NAME)		:$(OBJ) 
 			@make -C $(KML) && $(CC) $(FLAGS) $(SRC) $(KML)/kml.a -I$(INC) -o $(OUT)/$(NAME)
@@ -34,6 +34,7 @@ clean		:
 
 fclean		:clean
 			@rm -rf $(OUT)/$(NAME) && make fclean -C $(KML)
+			@rm -rf $(OUT)/checker
 
 re			:fclean all
 
